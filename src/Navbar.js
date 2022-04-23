@@ -5,30 +5,41 @@ import icons from "../constants/icons";
 
 export const Navbar = props => {
     return (
-        <SafeAreaView style = {styles.navbar}>
+        <View style = {styles.navbar}>
+          <View  style = {styles.language}>
             <TouchableOpacity>
               <Image 
                 source={icons.language}
-                style = {styles.language}
-              />  
+                style = {styles.icons}
+              /> 
             </TouchableOpacity>
-            
-        </SafeAreaView>
+          </View>
+          <View  style = {styles.settings}>
+            <TouchableOpacity>
+              <Image
+                source={icons.settings}
+                style = {styles.icons}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
     navbar:{
-        justifyContent: 'space-around',
-        height: 70,
-        paddingBottom: 10,
-        paddingVertical: 10,
-        paddingHorizontal: 20
+        flexDirection: 'row',
     },
     language:{
-        alignItems: 'flex-end',
-        justifyContent: 'space-around',
-        width: 40,
-        height: 40
+        alignContent: 'center',
+        left: '30%'
+    },
+    settings:{
+        left: '250%',
+        paddingEnd: 10
+    },
+    icons:{
+        width: 80,
+        height: 80
     }
 })
